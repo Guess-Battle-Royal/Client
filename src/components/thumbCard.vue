@@ -18,7 +18,8 @@ export default {
       left: 0,
       right: 0,
       leftImg: left0,
-      rightImg: right0
+      rightImg: right0,
+      timer: this.$store.state.timer
     }
   },
   methods: {
@@ -51,18 +52,13 @@ export default {
         audio.play()
       }
     }
-  },
-  computed: {
-    timer() {
-      console.log(timer)
-    }
   }
 }
 </script>
 
 <style scoped>
   .thumb-wrapper {
-    border: 1px solid #333;
+    width: 150px;
   }
   .thumb-wrapper img {
     width: 150px;

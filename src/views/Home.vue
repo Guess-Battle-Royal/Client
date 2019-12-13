@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <Body/>
-    <thumbCard />
     <!-- <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -14,8 +13,7 @@ import thumbCard from '../components/thumbCard'
 export default {
   name: 'home',
   components: {
-    Body,
-    thumbCard
+    Body
   }
 }
 </script>

@@ -16,7 +16,8 @@ export default new Vuex.Store({
     linkroom: '',
     countPlayer: 0,
     master: false,
-    timer: 5
+    expect: 0,
+    timer: 5 // for global timer
   },
   mutations: {
     ADD_DATA (state, payload) {
@@ -121,6 +122,14 @@ export default new Vuex.Store({
         .catch(function (err) {
           console.error('Error played game: ', err)
         })
+    }
+  },
+  getters: {
+    getTimer: state => {
+      return state.timer
+    },
+    getExpect: state => {
+      return state.expect
     }
   }
 })
