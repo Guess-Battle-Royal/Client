@@ -3,8 +3,8 @@
     <div id="nav">
       <router-link to="/">
         <p
-          class="game-title"
-          style="margin-top: 60px; font-family: 'Bungee', cursive; color: #3A6F5C; font-size: 90px; letter-spacing: 10px; text-decoreation: none"
+          class="game-title mt-3"
+          style="font-family: 'Bungee', cursive; color: #3A6F5C; font-size: 90px; letter-spacing: 10px; text-decoreation: none"
         >
           <strong>Guess Battle Royal</strong>
         </p>
