@@ -23,6 +23,10 @@
       <thumbCard />
       <thumbCard />
     </div>-->
+
+
+
+    
     <div class="thumb-wrapper">
       <thumbCard />
       <thumbCard />
