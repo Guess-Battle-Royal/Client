@@ -5,7 +5,6 @@
     <b-row>
       <b-col>
         <h1 class="welcome-title">Welcome to join with {{ getTotalPlayer }} other players in this room!</h1>
-        <p>dxgfchjklm,nbvgjhkln</p>
       </b-col>
     </b-row>
 

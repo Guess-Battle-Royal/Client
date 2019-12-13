@@ -76,7 +76,7 @@ export default {
 }
 
 @media screen and (min-width: 1500px) {
-  .keyboard-img{
+  .homethumb-img{
     width: 400px;
     height: 400px;
   }
