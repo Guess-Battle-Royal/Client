@@ -15,7 +15,8 @@ export default new Vuex.Store({
     position: 0,
     linkroom: '',
     countPlayer: 0,
-    master: false
+    master: false,
+    timer: 5
   },
   mutations: {
     ADD_DATA (state, payload) {
