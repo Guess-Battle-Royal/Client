@@ -125,12 +125,22 @@ export default new Vuex.Store({
         [`player${state.countPlayer}.username`]: state.username
       })
     },
-    playNow({ commit, name }, roomlink) {
-      db.collection('room').doc(`${roomlink}`).update({
+    playNow({ commit, state }, roomlink) {
+      console.log("masuk playnow di index store");
+      
+      // db.collection('room').doc(`${roomlink}`).update({
+      //   playStatus: true
+      // })
+      let roomDocRef = db.collection('mainRoom').doc(`${roomlink}`)
+      roomDocRef.set({
         playStatus: true
       })
-        .then(function () {
+        .then(() => {
           console.log('GAME PLAY!')
+          commit('CHANGE_PLAY_STATUS', true)
+          // console.log(this.$store.state.playStatus, "main gak");
+          console.log(state, "kebaca state");
+          
         })
         .catch(function (err) {
           console.error('Error played game: ', err)
