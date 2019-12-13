@@ -8,7 +8,7 @@
       <i v-show="isWin" @click="playSound" class="fas fa-trophy fa-7x mt-2" style="color: orange;"></i>
     </div>
     <h5 class="mt-5 mb-0" id="playername">
-      <strong>{{$store.state.winner}}</strong>
+      <strong>{{player}}</strong>
       <hr>
     </h5>
   </div>
@@ -34,9 +34,6 @@ export default {
   },
   created() {
     this.playSound();
-  },
-  mounted () {
-    this.playSound();
     const data = this.$store.state.objectData
     if(data.thubms == 0) {
       this.isWin = true
@@ -44,6 +41,9 @@ export default {
       this.isWin = false
     }
     this.player = data.username
+  },
+  mounted () {
+    this.playSound();
   }
 }
 </script>
