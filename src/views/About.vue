@@ -109,6 +109,9 @@ export default {
       this.$store.dispatch('addPlayer', { room: this.$route.params.room, newuser: this.newuser })
     },
     playNow () {
+      // alert("playnow kepencet")
+      console.log(this.$route.params.room, "dapet angka jelek gakkkkkk");
+      
       this.$store.dispatch('playNow', this.$route.params.room)
     }
   },
