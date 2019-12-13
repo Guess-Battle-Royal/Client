@@ -5,6 +5,7 @@
     <b-row>
       <b-col>
         <h1 class="welcome-title">Welcome to join with {{ getTotalPlayer }} other players in this room!</h1>
+        <p>dxgfchjklm,nbvgjhkln</p>
       </b-col>
     </b-row>
 
@@ -59,28 +60,31 @@ export default {
     return {
       formusername: true,
       newuser: '',
-      roomThisLink: `/game/${this.$route.params.room}`
+      roomThisLink: `/about/${this.$route.params.room}`
     }
   },
   computed: {
-    // getData () {
-    //   const data = Object.values(this.$store.state.objectData)
-    //   const arr = data.slice(2, data.length - 1)
-    //   // console.log(arr, "ini dari data object value");
-    //   for (var i = 0; i < arr.length; i++) {
-    //     for (var j = i + 1; j < arr.length; j++) {
-    //       if (arr[j].playerOrder > arr[i].playerOrder) {
-    //         var tampung = arr[i]
-    //         arr[i] = arr[j]
-    //         arr[j] = tampung
-    //       }
-    //     }
-    //   }
-    //   return arr
-    // },
-    // getTotalPlayer () {
-    //   return this.$store.state.objectData.count
-    // },
+    getData () {
+      // alert("get data")
+      const data = Object.values(this.$store.state.objectData)
+      const arr = data.slice(2, data.length - 1)
+      // console.log(arr, "ini dari data object value");
+      for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+          if (arr[j].playerOrder > arr[i].playerOrder) {
+            var tampung = arr[i]
+            arr[i] = arr[j]
+            arr[j] = tampung
+          }
+        }
+      }
+      console.log(arr, "data get dpt apa");
+      
+      return arr
+    },
+    getTotalPlayer () {
+      return this.$store.state.objectData.count
+    },
     getUser () {
       return this.$store.state.username
     },

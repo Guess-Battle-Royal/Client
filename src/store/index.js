@@ -18,7 +18,8 @@ export default new Vuex.Store({
     isPlaying: false,
     objectData: {},
     playStatus: false,
-    countPlayer: 0
+    countPlayer: 0,
+    position: 0,
   },
   mutations: {
     CHANGE_MASTER(state) {
@@ -58,14 +59,18 @@ export default new Vuex.Store({
         showConfirmButton: false
       })
       db.collection('mainRoom').add({
+        count: 1,
         expect: -1,
         real: -1,
         player1: {
           bet: -1,
+          position: 0,
           isPlaying: true,
           thumb: 2,
           username: payload,
-        }
+          playerOrder: 1
+        },
+        playStatus: false
       })
         .then((docRef) => {
           commit('CHANGE_LINK_ROOM', docRef.id)
@@ -89,6 +94,8 @@ export default new Vuex.Store({
     },
     addPlayer({ commit, state }, payload) {
       let countPlayer = state.objectData.count + 1
+      console.log(state.objectData.count, "isi count apaaaaaaaaa");
+      
       commit('CHANGE_COUNT_PLAYER', countPlayer)
       db.collection('mainRoom').doc(`${payload.room}`).update({
         [`player${countPlayer}`]: {
@@ -107,6 +114,13 @@ export default new Vuex.Store({
         .catch(function (error) {
           console.error('Error writing document: ', error)
         })
+    },
+    updatePosition ({ commit, state }, payload) {
+      return db.collection('room').doc(`${payload.room}`).update({
+        [`player${state.countPlayer}.position`]: payload.position,
+        [`player${state.countPlayer}.wpm`]: payload.wpm,
+        [`player${state.countPlayer}.username`]: state.username
+      })
     },
     playNow({ commit, name }, roomlink) {
       db.collection('room').doc(`${roomlink}`).update({
