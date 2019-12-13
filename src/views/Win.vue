@@ -2,9 +2,10 @@
   <div id="border">
     <div class="wrapper mt-3">
       <p>
-        <strong>Congratulations!</strong>
+        <strong v-if="isWin">Congratulations!</strong>
+        <strong v-else>Sorry, you can try again next time!</strong>
       </p>
-      <i @click="playSound" class="fas fa-trophy fa-7x mt-2" style="color: orange;"></i>
+      <i v-show="isWin" @click="playSound" class="fas fa-trophy fa-7x mt-2" style="color: orange;"></i>
     </div>
     <h5 class="mt-5 mb-0" id="playername">
       <strong>{{$store.state.winner}}</strong>
@@ -18,6 +19,8 @@ import win from '@/assets/winning.wav';
 
 export default {
   name: 'win',
+  isWin: false,
+  player: '',
   data() {
     return {
       message: 'Hello, you win!',
@@ -34,6 +37,13 @@ export default {
   },
   mounted () {
     this.playSound();
+    const data = this.$store.state.objectData
+    if(data.thubms == 0) {
+      this.isWin = true
+    } else {
+      this.isWin = false
+    }
+    this.player = data.username
   }
 }
 </script>
