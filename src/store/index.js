@@ -22,6 +22,7 @@ export default new Vuex.Store({
     master: false,
     winner: 'Player one',
     position: 0,
+    timer: 5 // for global timer
   },
   mutations: {
     CHANGE_MASTER(state) {
@@ -134,6 +135,14 @@ export default new Vuex.Store({
         .catch(function (err) {
           console.error('Error played game: ', err)
         })
+    }
+  },
+  getters: {
+    getTimer: state => {
+      return state.timer
+    },
+    getExpect: state => {
+      return state.expect
     }
   }
 })

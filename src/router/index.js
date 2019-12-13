@@ -25,7 +25,12 @@ const routes = [
     path: '/win',
     name: 'win',
     component: () => import(/* webpackChunkName: "winner" */ '../views/Win.vue')
-  },
+  }, 
+  {
+    path: '/game',
+    name: 'game',
+    component: () => import(/* webpackChunkName: "game" */ '../views/Game.vue')
+  }
 ]
 
 const router = new VueRouter({
