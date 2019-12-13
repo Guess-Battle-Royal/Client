@@ -7,7 +7,7 @@
       <i @click="playSound" class="fas fa-trophy fa-7x mt-2" style="color: orange;"></i>
     </div>
     <h5 class="mt-5 mb-0" id="playername">
-      <strong>Player one</strong>
+      <strong>{{$store.state.winner}}</strong>
       <hr>
     </h5>
   </div>
@@ -70,6 +70,6 @@ p {
 #playername {
   font-family: 'Lilita One', cursive;
   font-size: 30px;
-  color: black;
+  color: 2F4F4F;
 }
 </style>
