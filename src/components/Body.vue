@@ -7,9 +7,7 @@
     </div>
     <!-- image -->
     <!-- daring message  -->
-
     <p class="detiled-text1">Place up your best thumb to fail your opponent!</p>
-
     <!-- daring message  -->
     <!-- input form  -->
     <div class="container-form">
